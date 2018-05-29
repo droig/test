@@ -1,0 +1,11 @@
+{
+  "generator-express": {
+    "promptValues": {
+      "type": "MVC",
+      "viewEngine": "Pug",
+      "cssPreprocessor": "Sass",
+      "buildTool": "Grunt",
+      "database": "MongoDB"
+    }
+  }
+}
