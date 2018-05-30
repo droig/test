@@ -67,8 +67,8 @@ module.exports = (grunt) => {
           'public/dist.js': ['public/js/**/*.js']
         },
         options: {
-          transform: ['babelify'],
-          watch: true
+          transform: [["babelify", { presets: ["es2015", 'react'] }]],
+          watch: false
         }
       }
     }
