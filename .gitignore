@@ -1,6 +1,5 @@
 node_modules/
 .nyc_output
 .sass-cache
-package-lock.json
 public/css/style.css
 public/dist.js
