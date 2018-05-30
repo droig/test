@@ -9,34 +9,33 @@ module.exports = (app) => {
   app.use('/api', router)
 };
 
-router.get('/test', (req, res, next) => {
+router.get('/test', async (req, res, next) => {
   
-  helpers.getArticles().then( async(data) => {
-    
-    const count = await helpers.saveArticles(data)
-    res.json({ insertedArticles: count })
-  })
+  const data = await helpers.getArticles()
+  const count = await helpers.saveArticles(data)
+  res.json({ insertedArticles: count })
 })
 
 
-router.get('/articles', (req, res, next) => {
+router.get('/articles', async (req, res, next) => {
 
-  Article.find((err, articles) => {
-    if (err) return next(err)
-    res.json(articles)
-  })
+  const articles = await Article.find().sort({ articleDate: -1 })
+  res.json(articles)
 
 })
 
 
-router.delete('/article/:articleId', (req, res, next) => {
+router.delete('/article/:articleId', async (req, res, next) => {
 
   const aID = req.params.articleId
-
-  Article.remove({ _id: aID }, (err) => {
-    if (err) return next(err)
-    res.json({ deleted: aID })
-  })
+  let articles;
+  try {
+    await Article.remove({ _id: aID })
+    articles = await Article.find()
+    res.json(articles)
+  } catch (err) {
+    return next(err)
+  }
 
 })
 
