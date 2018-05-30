@@ -10,9 +10,9 @@ block content
     table.table
       tbody
         tr(v-for="article in articles")
-          td {{article.title}} 
+          td(@click="openUrl(article.url)") {{article.title}} 
             span.author - {{article.author}} -
-          td {{article.articleDate | toDate}}
+          td(@click="openUrl(article.url)") {{article.articleDate | toDate}}
           td
             a.delete(href, @click.prevent="deleteArticle(article._id)")
               svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24')

@@ -27,10 +27,17 @@ var app = new Vue({
 
 
   methods: {
+
     deleteArticle(id) {
       axios.delete('/api/article/' + id).then(res => {
         this.articles = res.data;
       })
+    },
+
+
+    openUrl(url) {
+      let win = window.open(url, '_blank');
+      win.focus();
     }
   },
 

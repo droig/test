@@ -21,7 +21,7 @@ table {
 		}
 
 		&:hover {
-
+			cursor: pointer;
 			background: #fafafa;
 			.delete {
 				visibility: visible;
