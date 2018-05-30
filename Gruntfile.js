@@ -94,6 +94,7 @@ module.exports = (grunt) => {
   });
 
   grunt.registerTask('default', [
+    'browserify',
     'sass',
     'develop',
     'watch'
