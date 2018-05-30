@@ -34,4 +34,4 @@ const cronFn = require('./app/cron/cron');
 cronFn()
 setInterval( () => {
 	cronFn()
-}, 2 * 60 * 1000);
+}, config.interval * 60 * 1000);
