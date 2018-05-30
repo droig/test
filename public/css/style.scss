@@ -1,2 +1,31 @@
 @import './node_modules/bootstrap/scss/bootstrap.scss';
 
+.delete {
+	visibility: hidden;
+
+	svg {
+		width: 16px;
+		float: left;
+	}
+}
+
+table {
+	tr {
+		background: #fff;
+		border: 1px #ccc;
+		font-size: 13pt;
+		color: #333;
+		
+		.author {
+			color: #999;
+		}
+
+		&:hover {
+
+			background: #fafafa;
+			.delete {
+				visibility: visible;
+			}
+	}
+	}
+}
