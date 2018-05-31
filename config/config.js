@@ -9,7 +9,8 @@ const config = {
       name: 'reigndesign'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/reigndesign-development',
+    db: 'mongodb://reigndesign:test2018@ds139970.mlab.com:39970/reigndesign',
+    //db: 'mongodb://localhost/reigndesign-development',
     interval: 60
   },
 
