@@ -17,6 +17,8 @@ Install dependencies:
 To run the app:
 
     grunt
+
+The server will be running in **http://localhost:3000**
     
 ## Notes
 ### Fetching Articles
