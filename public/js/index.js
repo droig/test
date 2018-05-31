@@ -3,6 +3,11 @@ const axios = require('axios')
 const distanceInWordsToNow = require('date-fns/distance_in_words_to_now')
 const format = require('date-fns/format')
 
+window.paceOptions = { ajax: {trackMethods:["GET", "DELETE"], trackWebSockets:true, ignoreURLs:[]} }
+require('pace-js')
+Pace.start()
+
+
 
 var app = new Vue({
   el: '#app',
@@ -29,8 +34,11 @@ var app = new Vue({
   methods: {
 
     deleteArticle(id) {
+
       axios.delete('/api/article/' + id).then(res => {
         this.articles = res.data;
+      }).catch(err => {
+        console.log('error getting articles')
       })
     },
 

@@ -25,6 +25,7 @@
     "moment": "^2.22.1",
     "mongoose": "4.1.2",
     "morgan": "1.6.1",
+    "pace-js": "1.0.2",
     "pug": "2.0.3",
     "request-promise": "4.2.2",
     "serve-favicon": "2.3.0",
